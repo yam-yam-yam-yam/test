@@ -1,0 +1,172 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+margin:0px;
+width:1903px;
+height:1080px;
+text-align: center;   
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+/*배경*/
+#backImage{                               
+background-color: rgb(182, 153, 75);
+height:500px;
+} 
+
+/*depth들을 감싸고있는 박스*/
+.nav{     
+height:300px;          
+}
+
+/*depth1*/
+.nav .dep1 {
+    font-size:0px;
+    padding-top:20px;
+    height:100px;
+}
+
+.nav .dep1 > li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    font-size: 16px; 
+    
+    
+}
+.nav .dep1 > li.logo,
+.nav .dep1 > li.login{
+    width:200px;
+    padding: 30px 0; /*li.menu를 한꺼번에 묶어서 하지않은 이유는 a태그때문에 li.menu가 갇혀있기때문*/
+}
+.nav .dep1 > li.menu{
+    width:150px;
+    padding:0px;
+}
+
+/*depth2*/
+.nav .dep2{
+     display:none;
+}
+.nav .dep2 a{
+    display:block;
+    padding:10px 0;
+}
+
+.nav .dep1 > li > a{
+    display:block;
+    padding: 30px 0;
+}
+
+/*dep1의 5가지메뉴(로고,로그인제외) hover시 감싸고있는 부모클래스인 nav클래스에 배경색 줌
+개발실패*/
+.nav .dep1 > li.menu:hover + .nav{
+    background-color: aliceblue;
+}
+
+/*로고,로그인li 를 제외한 메뉴li에 hover시 dep2를 보여줌*/
+.nav .dep1 > li > a:hover ~ .dep2{
+    display:block;
+    background-color: aliceblue; /*이 배경색은 그냥 구분하기 쉽게 임시로 적용*/
+    
+}
+
+/*밑의 문장을 위의문장으로 교체해야하는데 잘 안됨*/
+.nav .dep1:hover .dep2{
+    display:block;
+    background-color: aliceblue; /*이 배경색은 그냥 구분하기 쉽게 임시로 적용*/
+}
+
+
+.nav .dep1 > li:hover > a{
+    color:green;              
+}
+.nav .dep2 > li:hover > a{
+    color:green;
+}
+
+/*.menu_box{
+    position: absolute;
+    top:50px;
+    background-color: brown;
+    width:50px;
+    height:50px;
+}*/
+
+
+.bottom_menu{
+    font-size:0px;
+    width:100%;
+    height:70px;
+    background-color: rgb(35, 49, 71);
+    color:white;
+    border-top:1px solid rgb(128, 129, 219);
+    box-shadow:1px 1px 8px #778ece;
+}
+.bottom_menu .bottom_1{
+    position:relative; 
+    font-size:17px;
+    color:white;
+    width:25%;
+    line-height:420%;
+    display:inline-block;   
+    
+    transition-property:  all;
+    transition-duration: 2s;                                  
+}
+.bottom_menu .bottom_2{
+    position:relative; 
+    font-size:17px;
+    color:white;
+    width:25%;
+    line-height:420%;
+    display:inline-block;
+
+    transition-property:  all;
+    transition-duration: 2s;
+
+}
+
+.bottom_c_1{
+    background-color: cornflowerblue;
+    height:0px;
+    display:block;
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: 2s;
+}
+.bottom_c_2{
+    background-color: cornflowerblue;
+    height:0px;
+    display:block;
+    overflow: hidden;
+    transition-property: all;
+    transition-duration: 2s;
+}
+
+
+
+.footer{
+    padding:20px;
+    padding-left:200px;
+    font-size:13px;
+    text-align:left;
+    background-color: rgb(79, 101, 145);
+    COLOR:WHITE;
+}
+.footer_1,.footer_2,.footer_3{
+    margin-bottom:10px;
+}
+.footer_1{
+    display:flex;                
+}
+.footer_1_c{
+    margin-right:20px;
+}
