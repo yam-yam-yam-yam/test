@@ -12,50 +12,50 @@
                         <li class="logo">
                             영진전문대학교
                         </li>
-                        <li class="menu">
+                        <li class="menu" onmouseover="nav_on()" onmouseout="nav_off()">
                             <a href="#">진로설계</a>
-                            <ul class="dep2">
-                                <li><a href="#">메뉴1-1</a></li>
-                                <li><a href="#">메뉴1-2</a></li>
-                                <li><a href="#">메뉴1-3</a></li>
+                            <ul class="dep2" onmouseover="nav_on()" >
+                                <li><a href="#">진로심리검사</a></li>
+                                <li><a href="#">직업정보</a></li>
                             </ul>
                         </li>
-                        <li class="menu">
+                        <li class="menu" onmouseover="nav_on()" onmouseout="nav_off()">
                             <a href="#">직무역량강화</a>
-                            <ul class="dep2">
-                                <li><a href="#">메뉴2-1</a></li>
-                                <li><a href="#">메뉴2-2</a></li>
-                                <li><a href="#">메뉴2-3</a></li>
+                            <ul class="dep2" onmouseover="nav_on()" >
+                                <li><a href="#">지원프로그램</a></li>
+                                <li><a href="#">자격증/수료증 관리</a></li>
+                                <li><a href="#">백호마일리지</a></li>
                             </ul>
                         </li>
-                        <li class="menu">
+                        <li class="menu" onmouseover="nav_on()" onmouseout="nav_off()">
                             <a href="#">구직역량강화</a>
-                            <ul class="dep2">
-                                <li><a href="#">메뉴3-1</a></li>
-                                <li><a href="#">메뉴3-2</a></li>
-                                <li><a href="#">메뉴3-3</a></li>
+                            <ul class="dep2" onmouseover="nav_on()" >
+                                <li><a href="#">이력서/자소서 tip!</a></li>
+                                <li><a href="#">이력서/자소서 등록</a></li>
+                                <li><a href="#">온라인 멘토링</a></li>
+                                <li><a href="#">모의면접</a></li>
                             </ul>
                         </li>
-                        <li class="menu">
+                        <li class="menu" onmouseover="nav_on()" onmouseout="nav_off()">
                             <a href="#">구직서비스</a>
-                            <ul class="dep2">
-                                <li><a href="#">메뉴4-1</a></li>
-                                <li><a href="#">메뉴4-2</a></li>
-                                <li><a href="#">메뉴4-3</a></li>
+                            <ul class="dep2" onmouseover="nav_on()" >
+                                <li><a href="#">채용정보</a></li>
+                                <li><a href="#">채용등록</a></li>
+                                <li><a href="#">입사지원관리</a></li>
                             </ul>
                         </li>
-                        <li class="menu">
+                        <li class="menu" onmouseover="nav_on()" onmouseout="nav_off()">
                             <a href="#">상담관리</a>
-                            <ul class="dep2">
-                                <li><a href="#">메뉴4-1</a></li>
-                                <li><a href="#">메뉴4-2</a></li>
-                                <li><a href="#">메뉴4-3</a></li>
+                            <ul class="dep2" onmouseover="nav_on()">
+                                <li><a href="#">허허</a></li>
                             </ul>
                         </li>
                         <li class="login">
                             로그인
                         </li>
                     </ul>
+                </div>
+                <div class="nav2"><!--nav2 클래스는 dep2의 배경색만을 위한 클래스-->
                 </div>
         </div>
         
@@ -95,19 +95,48 @@
 
 
         <script>
+            var nav = document.getElementsByClassName("nav");
+            var nav2 = document.getElementsByClassName("nav2")
+            var dep2 = document.getElementsByClassName("dep2")
+
             var bottom_1 = document.getElementsByClassName("bottom_1");
             var bottom_2 = document.getElementsByClassName("bottom_2");
             var bottom_c_1 = document.getElementsByClassName("bottom_c_1");
             var bottom_c_2 = document.getElementsByClassName("bottom_c_2");
+
+            var flag_1 = 1;
+            var flag_2 = 1;
+
+            
+            function nav_on(){
+                nav[0].style.backgroundColor="white";     
+                nav2[0].style.height="300px";
+                for(var i = 0; i<dep2.length; i++){
+                    dep2[i].style.height="300px"; 
+                }
+            }
+
+            function nav_off(){
+                /*setTimeout(function() {
+                    nav[0].style.backgroundColor="transparent"; 
+                }, 1000);             오류있음 이유모르겠*/
+                nav[0].style.backgroundColor="transparent";   /*transparent = 투명한*/
+                nav2[0].style.height="0px";
+                for(var i = 0; i<dep2.length; i++){
+                    dep2[i].style.height="0px"; 
+                }
+            }
+
+
             /*flag가 1이면 꺼진상태 0이면 켜진상태*/
             function bottom_script_1(){
                 if (flag_1 == 1 && flag_2 == 1){                                  /*두 바텀메뉴 다 off상태 왼쪽메뉴만 on한다*/
                     bottom_1[0].style.backgroundColor = "pink";    /*class면 [0]처럼 배열로 나타내줘야함.. 이거떄문에 2시간버림*/
-                    bottom_1[0].style.height="70"+"px";            /*왠진 모르겠으나 이 함수 적용시 height가 살짝 커져서 일단 임시방편*/
-                    bottom_c_1[0].style.height = "200"+"px";
+                    bottom_1[0].style.height="70px";            /*왠진 모르겠으나 이 함수 적용시 height가 살짝 커져서 일단 임시방편*/
+                    bottom_c_1[0].style.height = "200px";
 
-                    bottom_1[0].style.top="-7"+"px";
-                    bottom_1[0].style.boxShadow="0px 4px 5px red";
+                    bottom_1[0].style.top="-6px";
+                    bottom_1[0].style.boxShadow="0px 4px 5px rgb(114, 73, 111)";
 
                     flag_1 = 0;
 
@@ -119,8 +148,8 @@
                     bottom_1[0].style.height="70"+"px";           
                     bottom_c_1[0].style.height = "200"+"px";
 
-                    bottom_1[0].style.top="-7"+"px";
-                    bottom_1[0].style.boxShadow="0px 4px 5px red";
+                    bottom_1[0].style.top="-6"+"px";
+                    bottom_1[0].style.boxShadow="0px 4px 5px rgb(114, 73, 111)";
 
                     bottom_2[0].style.backgroundColor = "rgb(35, 49, 71)";
                     bottom_2[0].style.top="0"+"px";
@@ -147,8 +176,8 @@
                     bottom_2[0].style.height="70"+"px";
                     bottom_c_2[0].style.height = "200"+"px";
 
-                    bottom_2[0].style.top="-7"+"px";
-                    bottom_2[0].style.boxShadow="0px 4px 5px red";
+                    bottom_2[0].style.top="-6"+"px";
+                    bottom_2[0].style.boxShadow="0px 4px 5px rgb(114, 73, 111)";
 
                     flag_2 = 0;
                 }
@@ -157,8 +186,8 @@
                     bottom_2[0].style.height="70"+"px";
                     bottom_c_2[0].style.height = "200"+"px";
   
-                    bottom_2[0].style.top="-7"+"px";
-                    bottom_2[0].style.boxShadow="0px 4px 5px red";
+                    bottom_2[0].style.top="-6"+"px";
+                    bottom_2[0].style.boxShadow="0px 4px 5px rgb(114, 73, 111)";
 
                     bottom_1[0].style.backgroundColor = "rgb(35, 49, 71)";
                     bottom_1[0].style.top="0"+"px";
@@ -179,8 +208,6 @@
                     flag_2 = 1;
                 }
             }
-            var flag_1 = 1;
-            var flag_2 = 1;
         </script>
     </body>
 </html>
